@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="snake_wheel">
+	
+  <property name="wheel_radius" value="0.04" />
+  <property name="wheel_depth" value="0.04" />
+  <property name="wheel_mass" value="0.2" />
+  
+  <xacro:macro name="snake_wheel" params="twheel parent pos rot">
+	  
+	<joint name="joint_wheel_${twheel}" type="fixed">
+		<parent link="${parent}"/>
+		<child link="wheel_${twheel}"/>
+		<origin xyz="${pos}" rpy="0 0 0" /> 
+		<axis xyz="0 1 0" rpy="0 0 0" />
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+
+    
+	<link name="wheel_${twheel}">
+		<collision>
+			<origin xyz="0 0 0" rpy="${rot}"/>
+			<geometry>
+				<mesh filename="package://snakewbot_description/meshes/omniwheel.stl" />
+			</geometry>
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0" rpy="${rot}"/>
+			<geometry>
+				<mesh filename="package://snakewbot_description/meshes/omniwheel.stl" />
+<!--
+				<cylinder length="${wheel_depth}" radius="${wheel_radius}" />
+-->
+			</geometry>
+			<material name="grey"/>
+		</visual>
+
+		<inertial>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<mass value="1"/>
+			<inertia
+			ixx="0.001" ixy="0.0" ixz="0.0"
+			iyy="0.001" iyz="0.0"
+			izz="0.001"/>
+		</inertial>
+    </link>
+    
+    <gazebo reference="wheel_${twheel}">
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+
+
+  </xacro:macro>
+</robot>
