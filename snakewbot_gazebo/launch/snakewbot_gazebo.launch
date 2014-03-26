@@ -27,4 +27,3 @@
   <!--include file="$(find snakewbot_control)/launch/testbot_control.launch" /-->
 
 </launch>
-

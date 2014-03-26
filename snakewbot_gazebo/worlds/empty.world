@@ -9,26 +9,4 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
-    
-	<model name="A320">
-		<static>true</static>
-		<link name="link">
-			<pose>-20 0 0 0 0 0</pose>
-			<collision name="collision">
-				<geometry>
-					<mesh>
-						<uri>model://A320/meshes/A320.dae</uri>
-					</mesh>
-				</geometry>
-			</collision>
-			<visual name="visual">
-				<geometry>
-					<mesh>
-						<uri>model://A320/meshes/A320.dae</uri>
-					</mesh>
-				</geometry>
-			</visual>
-		</link>
-	</model>
-  </world>
 </sdf>
