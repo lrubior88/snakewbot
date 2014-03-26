@@ -19,7 +19,7 @@
 
 <!-- Spawn a robot into Gazebo -->
 	<param name="robot_description"
-		command="$(find xacro)/xacro.py '$(find snakewbot_description)/urdf/snake.xacro'" />	 
+		command="$(find xacro)/xacro.py '$(find snakewbot_description)/urdf/snake.urdf.xacro'" />	 
 	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
 		args="-urdf -z 0.1 -model snake -param robot_description"/>
 

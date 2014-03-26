@@ -13,18 +13,18 @@
 	<model name="A320">
 		<static>true</static>
 		<link name="link">
-			<pose>-20 0 0 0 0 0</pose>
+			<pose>-5 0 0.45 0 0 0</pose>
 			<collision name="collision">
 				<geometry>
 					<mesh>
-						<uri>model://A320/meshes/A320.dae</uri>
+						<uri>model://snakewbot/meshes/doubleHull.stl</uri>
 					</mesh>
 				</geometry>
 			</collision>
 			<visual name="visual">
 				<geometry>
 					<mesh>
-						<uri>model://A320/meshes/A320.dae</uri>
+						<uri>model://snakewbot/meshes/doubleHull.stl</uri>
 					</mesh>
 				</geometry>
 			</visual>

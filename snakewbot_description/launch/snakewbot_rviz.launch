@@ -1,7 +1,7 @@
 <launch>
   <!-- urdf xml robot description loaded on the Parameter Server-->
   <param name="robot_description" 
-		command="$(find xacro)/xacro.py '$(find snakewbot_description)/urdf/snake.xacro'" />
+		command="$(find xacro)/xacro.py '$(find snakewbot_description)/urdf/snake.urdf.xacro'" />
   
   <!-- source that publishes the joint positions as a sensor_msgs/JointState -->
   <param name="use_gui" value="true"/>
