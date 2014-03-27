@@ -8,7 +8,7 @@
 	
   <!-- BASE-FOOTPRINT -->
   <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin -->	
-	<link name="base_footprint1.0">
+	<link name="base_footprint1">
 		<inertial>
             <mass value="0.0001" />
             <origin xyz="0 0 0" />
@@ -29,17 +29,38 @@
         </visual>
     </link>
 
-    <snake_module number="1.0" rotY="0" rotZ="0"/>
+    <snake_module number="1" n2="2" rotY="0" rotZ="0"/>
+    <snake_module number="2" n2="3" rotY="0" rotZ="0"/>
 
-    <snake_module number="2.0" rotY="0" rotZ="0"/>
+    <snake_module number="3" n2="4" rotY="0" rotZ="0"/>
+    <snake_module number="4" n2="5" rotY="0" rotZ="0"/>
+    <snake_module number="5" n2="6" rotY="0" rotZ="0"/>
+    <snake_module number="6" n2="7" rotY="0" rotZ="0"/>
+    <snake_module number="7" n2="8" rotY="0" rotZ="0"/>
+    <snake_module number="8" n2="9" rotY="0" rotZ="0"/>
+    
+    
+  <gazebo>
+    <plugin name="skid_steer_drive_controller8" filename="libgazebo_ros_skid_steer_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <leftFrontJoint>front_left8_wheel_joint</leftFrontJoint>
+      <rightFrontJoint>front_right8_wheel_joint</rightFrontJoint>
+      <leftRearJoint>back_left8_wheel_joint</leftRearJoint>
+      <rightRearJoint>back_right8_wheel_joint</rightRearJoint>
+      <wheelSeparation>${base_y_size}</wheelSeparation>
+      <wheelDiameter>${2*wheel_radius}</wheelDiameter>
+      <torque>35</torque>
+      <broadcastTF>1</broadcastTF>
+      <odometryFrame>map</odometryFrame>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <robotBaseFrame>base_footprint8</robotBaseFrame>
+    </plugin>
 <!--
-    <snake_module number="3.0" rotY="0" rotZ="0"/>
-    <snake_module number="4.0" rotY="0" rotZ="0"/>
-    <snake_module number="5.0" rotY="0" rotZ="0"/>
-    <snake_module number="6.0" rotY="0" rotZ="0"/>
-    <snake_module number="7.0" rotY="0" rotZ="0"/>
-    <snake_module number="8.0" rotY="0" rotZ="0"/>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" />
 -->
+  </gazebo>
 
 
     

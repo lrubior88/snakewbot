@@ -21,7 +21,7 @@
   </macro>
   
   
-  <xacro:macro name="snake_module" params="number rotY rotZ">  
+  <xacro:macro name="snake_module" params="number n2 rotY rotZ">  
 
 	<joint name="base_footprint_joint${number}" type="fixed">
 		<origin xyz="0 0 ${wheel_radius - base_z_origin_to_wheel_origin}" rpy="0 0 0" />
@@ -144,10 +144,10 @@
 	<joint name="joint_base${number}" type="fixed">
 		<origin xyz="${joint_distance} 0 -${wheel_radius}" rpy="0 0 0" />
 		<parent link="link_z${number}"/>
-		<child link="base_footprint${number+1}" />
+		<child link="base_footprint${n2}" />
 	</joint>
 
-	<link name="base_footprint${number+1}">
+	<link name="base_footprint${n2}">
 		<inertial>
 			<mass value="0.0001" />
 			<origin xyz="0 0 0" />
