@@ -165,6 +165,31 @@
 		</visual>
 	</link>
 	
+<!--
+  <transmission name="tran_jointy${number}">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_y${number}"/>
+    <actuator name="motor_joint_y${number}">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran_jointz${number}">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_z${number}"/>
+    <actuator name="motor_joint_z${number}">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <gazebo>	
+	<plugin name="gazebo_ros_control${number}" filename="libgazebo_ros_control.so" />
+	<robotNamespace>/snakewbot</robotNamespace>
+  </gazebo>
+-->
+  
   </xacro:macro>
 </robot>
 	
